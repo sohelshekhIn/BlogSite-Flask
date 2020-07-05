@@ -1,0 +1,47 @@
+{% extends "layout.html" %} {% block body %}
+
+<!-- Page Header -->
+<header
+  class="masthead"
+  style="background-image: url('{{ url_for('static', filename='img/home-bg.jpg')}} ')"
+>
+  <div class="overlay"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <div class="site-heading">
+          <h1>The Tech Blog</h1>
+          <span class="subheading">A Blog By Sohel</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- Main Content -->
+<div class="container">
+  <div class="row">
+    <div class="col-lg-8 col-md-10 mx-auto">
+      {% for post in posts %}
+      <div class="post-preview">
+        <a href="/post/{{post.slug}}">
+          <h4 class="post-title">
+            {{post.post_title}}
+          </h4>
+        </a>
+        <p class="post-meta">
+          Posted by
+          <a href="#">Start Bootstrap</a>
+          on {{post.post_date}}
+        </p>
+      </div>
+      {% endfor %}
+      <hr />
+      <!-- Pager -->
+      <div class="clearfix">
+        <a class="btn btn-primary float-right" href="#">Older Posts &rarr;</a>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

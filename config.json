@@ -1,0 +1,6 @@
+{
+  "params": {
+    "local_uri": "mysql://root:root@localhost/testblog",
+    "prod_uri": "mysql://root:root@localhost/testblog"
+  }
+}
